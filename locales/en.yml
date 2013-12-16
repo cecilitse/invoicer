@@ -1,2 +1,26 @@
 ---
 en:
+  document:
+    acceptance_html: |
+      <b>Date and signature</b>
+    client: Client
+    product:
+      price: Price excl VAT
+      quantity: Quty
+      title: Title
+      total_excl_vat: Total excl VAT
+      unit: Unit
+      vat: VAT
+    payment:
+      bank: "Bank:"
+      count_number: "Count no:"
+      desk: "Desk:"
+      key_number: "Key:"
+      title: "RIB/IBAN"
+    total:
+      excl_vat: Total excl VAT
+      incl_vat: Total incl VAT
+      only_vat: VAT
+    type:
+      estimation: ESTIMATION COST
+      invoice: INVOICE

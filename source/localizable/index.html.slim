@@ -1,0 +1,99 @@
+---
+layout: false
+---
+
+doctype html
+html
+  head
+    meta charset="utf-8"
+    meta content='width=device-width, initial-scale=0.2' name='viewport'
+    link href="http://localhost:4567/stylesheets/all.css" media="screen" rel="stylesheet" type="text/css"
+  body
+    div class="l-container"
+      header
+        div class="row"
+          div class="small-8 columns"
+            h1 = t("document.type.#{data.document.type}")
+            ul class="no-bullet"
+              li = data.document.date
+              li = data.document.reference
+              li class="invoice-payment-delay" = data.document.payment.delay
+          div class="small-4 columns text-right"
+            img src="#{data.me.logo_url}" class="me-avatar"
+        div class="row"
+          div class="small-6 columns"
+            h2 = t("document.client")
+            ul class="no-bullet"
+              li
+                strong = data.document.client.title
+              li = data.document.client.name
+              li = data.document.client.address
+              li
+                =' data.document.client.postcode
+                =' data.document.client.city
+          div class="small-6 columns me-details"
+            h2 = data.me.title
+            ul class="no-bullet"
+              li = data.me.subtitle
+              li = data.me.mail
+              li = data.me.website
+      div class="row"
+        div class="small-12 columns"
+          table class="invoice-details"
+            thead
+              tr
+                th class="invoice-details--title" = t("document.product.title")
+                th class="invoice-details--unit" = t("document.product.unit")
+                th = t("document.product.price")
+                th = t("document.product.quantity")
+                th = t("document.product.vat")
+                th = t("document.product.total_excl_vat")
+            tbody
+              - data.document.products.each do |product|
+                tr
+                  td class="invoice-details--title"
+                    strong = product.title
+                    p = product.description
+                  td class="invoice-details--unit" = product.unit
+                  td = product.price
+                  td = product.quantity
+                  td = product.vat_rate
+                  td = product.total_excl_vat
+            tfoot
+              tr class="invoice-details--subtotal"
+                td colspan="5" = t("document.total.excl_vat")
+                td = data.document.total.excl_vat
+              tr class="invoice-details--subtotal"
+                td colspan="5"
+                  =' t("document.total.only_vat")
+                  =' data.document.payment.vat_rate
+                td = data.document.total.only_vat
+              tr class="invoice-details--total"
+                td colspan="5" = t("document.total.incl_vat")
+                td = data.document.total.incl_vat
+      div class="row"
+        div class="small-6 columns"
+          = '&nbsp;'
+        div class="small-6 columns invoice-signature"
+          p = t("document.acceptance_html")
+      div class="l-container--footer"
+    footer class="l-footer"
+      div class="row"
+        div class="small-12 columns invoice-payment"
+          h3 = t("document.payment.title")
+          ul class="no-bullet"
+            li
+              b =' t("document.payment.bank")
+              =' data.me.payment.bank
+            li
+              b =' t("document.payment.desk")
+              =' data.me.payment.desk
+              b =' t("document.payment.count_number")
+              =' data.me.payment.count_number
+              b =' t("document.payment.key_number")
+              =' data.me.payment.key_number
+      div class="row"
+        div class="small-12 columns invoice-credits"
+          ul class="no-bullet"
+            - data.me.credits.each do |credit|
+              li = credit

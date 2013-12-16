@@ -1,3 +1,5 @@
+/.venv
 /bower_components
 /build
-/.venv
+/data/document.yml
+/data/me.yml

@@ -18,6 +18,11 @@ Install required bower components:
 
     $ bower install
 
+Copy and edit configuration files:
+
+    $ cp data/document.yml.sample data/document.yml
+    $ cp data/me.yml.sample data/me.yml
+
 ## Usage
 
 Start the server:

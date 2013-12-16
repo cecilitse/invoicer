@@ -1,0 +1,66 @@
+@charset 'utf-8'
+
+@import "compass/layout.scss"
+@import "foundation/scss/normalize"
+@import "foundation/scss/foundation"
+
+@include sticky-footer(237px, ".l-container", ".l-container--footer", ".l-footer")
+
+html
+  font-size: 85%
+
+.small-8, .small-6, .small-4
+  position: relative
+
+.small-8
+  width: 66.6666%
+
+.small-6
+  width: 50%
+
+.small-4
+  width: 33.3333%
+
+.invoice-credits
+  margin-top: 50px
+  text-align: center
+  ul
+    font-size: 0.8em
+
+.invoice-details
+  margin-top: 15px
+  width: 100%
+  th, td
+    line-height: 1.125em
+    padding: 10px
+    text-align: right
+    vertical-align: top
+  th
+    text-transform: uppercase
+  .invoice-details--subtotal
+    font-weight: normal
+    text-transform: uppercase
+  .invoice-details--total
+    font-weight: bold
+    text-transform: uppercase
+  .invoice-details--title
+    text-align: left
+  .invoice-details--unit
+    text-align: center
+
+.invoice-payment
+  margin-top: 50px
+
+.invoice-payment-delay
+  margin-top: 10px
+
+.invoice-signature
+  margin-top: 15px
+
+.me-avatar
+  height: 125px
+  margin-top: 0.2rem
+  width: 125px
+
+.me-details
+  text-align: right
