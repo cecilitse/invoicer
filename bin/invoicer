@@ -1,0 +1,31 @@
+#!/usr/bin/env ruby
+$: << File.join(__dir__, '..', 'lib')
+
+require 'thor'
+require 'invoicer'
+
+class InvoicerCLI < Thor
+
+  desc "generate TYPE", "Generate an invoice or a cost estimation PDF"
+  long_desc <<-LONGDESC
+    Will generate a cost estimation or an invoice PDF.
+
+    TYPE can be either `estimation` or `invoice`.
+
+    > $ ./invoicer.rb generate invoice
+  LONGDESC
+  def generate(type)
+    unless %w(estimation invoice).include?(type)
+      puts "ERROR: wrong type. Available types: estimation, invoice"
+      exit 1
+    end
+
+    template_url  = 'http://localhost:4567/index.html'
+    pdf_path      = File.join(__dir__, '..', "#{type}.pdf")
+    invoicer      = Invoicer::Generator.new(type, template_url, pdf_path)
+
+    invoicer.process
+  end
+end
+
+InvoicerCLI.start(ARGV)
