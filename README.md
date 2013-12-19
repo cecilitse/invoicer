@@ -1,6 +1,6 @@
 # Invoicer
 
-Invoicer helps you generate documents for your activity.
+Invoicer helps you generate invoice documents.
 
 ## Installation
 
@@ -29,11 +29,14 @@ Start the server:
 
     $ middleman server
 
-Generate a document:
+Generate an invoice PDF:
 
-    $ bin/invoicer generate <type> # type can be `estimation` or `invoice`
+    $ bin/invoicer generate
 
 ## Notes
 
-Invoicer is shipped with a base template. All its required components are specified in bower.json 
-configuration file
+* Invoicer is shipped with a default template (see `source/index.html.slim`).
+  All its required components are specified in `bower.json` configuration file.
+* In order to localize your document, set your locale by filling `data.document.base.locale` variable.
+  It's then automatically used by `t` translation helper.
+
