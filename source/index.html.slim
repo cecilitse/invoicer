@@ -82,7 +82,7 @@ html
     footer class="l-footer"
       div class="row"
         div class="small-12 columns invoice-payment"
-          h3 = t("document.payment.transfer.title")
+          h3 class="invoice-payment--title" = t("document.payment.transfer.title")
           ul class="no-bullet"
             li
               b =' t("document.payment.transfer.bank")
@@ -94,7 +94,7 @@ html
               =' data.me.payment.transfer.count_number
               b =' t("document.payment.transfer.key_number")
               =' data.me.payment.transfer.key_number
-          h3 = t("document.payment.cheque.title")
+          h3 class="invoice-payment--title" = t("document.payment.cheque.title")
           p
             =' t("document.payment.cheque.payee")
             b
