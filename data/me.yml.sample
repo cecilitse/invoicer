@@ -1,16 +1,17 @@
 ---
-logo_url:
-mail:
-title:
-subtitle:
-website:
+logo_url: http://www.gnu.org/graphics/gerwinski-gnu-head.png
+mail: bob@example.org
+title: Bob
+subtitle: The Great
+website: http://example.org
 payment:
   cheque:
-    payee:
+    payee: Bob - The Great
   transfer:
-    bank:
-    count_number:
-    desk:
-    key_number:
+    bank: XXXXX / Bank title
+    count_number: "YYYYYYYYYYY"
+    desk: "ZZZZZ"
+    key_number: "KK"
 credits:
-  - ""
+  - "<strong>Bob - The Great</strong>"
+  - "Bob's address"

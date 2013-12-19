@@ -1,29 +1,30 @@
 ---
 base:
   comments:
-    - ""
-  date:
-  locale:
-  reference:
-  template_url:
-  type:
+    - "some comment"
+    - "yet another comment"
+  date: "May 25, 2013"
+  locale: en
+  reference: No. 1337
+  template_url: 'http://localhost:4567/index.html'
+  type: invoice
 client:
-  address:
-  city:
-  name:
-  postcode:
-  title:
+  address: 42th Field
+  city: Valley
+  name: Tribe Leader
+  postcode: XXXXX
+  title: Hurd
 products:
   -
-    description:
-    title:
-    unit:
-    price:
-    quantity:
-    vat_rate:
-    total_excl_vat:
+    description: We need more plants to feed the horde
+    title: Sow seeds
+    unit: kg
+    price: "10.24$"
+    quantity: "10.00"
+    vat_rate: "0%"
+    total_excl_vat: "1 024.00$"
 total:
-  excl_vat:
-  incl_vat:
-  only_vat:
-  vat_rate:
+  excl_vat: "1 024.00$"
+  incl_vat: "1 024.00$"
+  only_vat: "0$"
+  vat_rate: "0%"
