@@ -13,13 +13,15 @@ html
       header
         div class="row"
           div class="small-8 columns"
-            h1 = t("document.type.#{data.document.type}")
+            h1 = t("document.type.#{data.document.base.type}")
             ul class="no-bullet"
-              li = data.document.date
-              li = data.document.reference
-              li class="invoice-payment-delay" = data.document.payment.delay
+              li = data.document.base.date
+              li = data.document.base.reference
+            ul class="no-bullet invoice-comments"
+              - data.document.base.comments.each do |comment|
+                li = comment
           div class="small-4 columns text-right"
-            img src="#{data.me.logo_url}" class="me-avatar"
+            img src="#{data.me.logo_url}" class="me-logo"
         div class="row"
           div class="small-6 columns"
             h2 = t("document.client")
@@ -43,10 +45,10 @@ html
             thead
               tr
                 th class="invoice-details--title" = t("document.product.title")
-                th class="invoice-details--unit" = t("document.product.unit")
-                th = t("document.product.price")
-                th = t("document.product.quantity")
-                th = t("document.product.vat")
+                th class="invoice-details--unit" = t("document.product.unit",   locale: data.document.base.locale)
+                th = t("document.product.price",          locale: data.document.base.locale)
+                th = t("document.product.quantity",       locale: data.document.base.locale)
+                th = t("document.product.vat",            locale: data.document.base.locale)
                 th = t("document.product.total_excl_vat")
             tbody
               - data.document.products.each do |product|
@@ -66,7 +68,7 @@ html
               tr class="invoice-details--subtotal"
                 td colspan="5"
                   =' t("document.total.only_vat")
-                  =' data.document.payment.vat_rate
+                  =' data.document.total.vat_rate
                 td = data.document.total.only_vat
               tr class="invoice-details--total"
                 td colspan="5" = t("document.total.incl_vat")
@@ -80,18 +82,23 @@ html
     footer class="l-footer"
       div class="row"
         div class="small-12 columns invoice-payment"
-          h3 = t("document.payment.title")
+          h3 = t("document.payment.transfer.title")
           ul class="no-bullet"
             li
-              b =' t("document.payment.bank")
-              =' data.me.payment.bank
+              b =' t("document.payment.transfer.bank")
+              =' data.me.payment.transfer.bank
             li
-              b =' t("document.payment.desk")
-              =' data.me.payment.desk
-              b =' t("document.payment.count_number")
-              =' data.me.payment.count_number
-              b =' t("document.payment.key_number")
-              =' data.me.payment.key_number
+              b =' t("document.payment.transfer.desk")
+              =' data.me.payment.transfer.desk
+              b =' t("document.payment.transfer.count_number")
+              =' data.me.payment.transfer.count_number
+              b =' t("document.payment.transfer.key_number")
+              =' data.me.payment.transfer.key_number
+          h3 = t("document.payment.cheque.title")
+          p
+            =' t("document.payment.cheque.payee")
+            b
+              =' data.me.payment.cheque.payee
       div class="row"
         div class="small-12 columns invoice-credits"
           ul class="no-bullet"

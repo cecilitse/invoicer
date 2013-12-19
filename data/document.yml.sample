@@ -1,11 +1,18 @@
 ---
+base:
+  comments:
+    - ""
+  date:
+  locale:
+  reference:
+  template_url:
+  type:
 client:
   address:
   city:
   name:
   postcode:
   title:
-date:
 products:
   -
     description:
@@ -15,12 +22,8 @@ products:
     quantity:
     vat_rate:
     total_excl_vat:
-reference:
 total:
   excl_vat:
-  only_vat:
   incl_vat:
-type:
-payment:
-  delay:
+  only_vat:
   vat_rate:

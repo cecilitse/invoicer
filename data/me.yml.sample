@@ -5,9 +5,12 @@ title:
 subtitle:
 website:
 payment:
-  bank:
-  count_number:
-  desk:
-  key_number:
+  cheque:
+    payee:
+  transfer:
+    bank:
+    count_number:
+    desk:
+    key_number:
 credits:
-  -
+  - ""

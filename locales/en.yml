@@ -2,21 +2,25 @@
 en:
   document:
     acceptance_html: |
-      <b>Date and signature</b>
+      <b>Date and signature</b> preceded by « good for agreement »
     client: Client
     product:
       price: Price excl VAT
-      quantity: Quty
-      title: Title
+      quantity: Qty
+      title: Description
       total_excl_vat: Total excl VAT
       unit: Unit
       vat: VAT
     payment:
-      bank: "Bank:"
-      count_number: "Count no:"
-      desk: "Desk:"
-      key_number: "Key:"
-      title: "RIB/IBAN"
+      cheque:
+        payee: "Set payee name to"
+        title: Cheque
+      transfer:
+        bank: "Bank:"
+        count_number: "Count no:"
+        desk: "Desk:"
+        key_number: "Key:"
+        title: "Transfer (RIB)"
     total:
       excl_vat: Total excl VAT
       incl_vat: Total incl VAT

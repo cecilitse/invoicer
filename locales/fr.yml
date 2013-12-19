@@ -4,21 +4,25 @@ fr:
     acceptance_html: |
       <b>Signature et date</b>
       précédées de la mention « devis et conditions acceptés, bon pour
-      commande pour la somme de (somme en toutes lettres) »
+      accord »
     client: Client
     product:
       price: Prix HT
       quantity: Qté
-      title: Désignation
+      title: Description
       total_excl_vat: Total HT
       unit: Unité
       vat: TVA
     payment:
-      bank: "Banque :"
-      count_number: "N° compte :"
-      desk: "Guichet :"
-      key_number: "Clé :"
-      title: "Relevé d'Identité Bancaire"
+      cheque:
+        payee: "A l'ordre de"
+        title: Chèque
+      transfer:
+        bank: "Banque :"
+        count_number: "N° compte :"
+        desk: "Guichet :"
+        key_number: "Clé :"
+        title: "Relevé d'Identité Bancaire"
     total:
       excl_vat: Total HT
       incl_vat: Total TTC
