@@ -1,14 +1,14 @@
 require 'open3'
 require 'shellwords'
+require 'yaml'
 
 module Invoicer
   class Generator
-    attr_reader :pdf_path, :template_url, :type
+    attr_reader :pdf_path, :template_url
 
-    def initialize(type, template_url, pdf_path)
-      @template_url = template_url
+    def initialize(pdf_path)
+      @template_url = build_template_url
       @pdf_path     = pdf_path
-      @type         = type
     end
 
     def process
@@ -33,6 +33,13 @@ module Invoicer
       ]
 
       Shellwords.join(arguremnts)
+    end
+
+    def build_template_url
+      document_path = File.join(__dir__, '..', '..', 'data', 'document.yml')
+      document      = YAML.load_file(document_path)
+
+      document['base']['template_url']
     end
   end
 end
