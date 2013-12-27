@@ -18,11 +18,16 @@ fr:
         payee: "A l'ordre de"
         title: Chèque
       transfer:
-        bank: "Banque :"
-        count_number: "N° compte :"
-        desk: "Guichet :"
-        key_number: "Clé :"
-        title: "Relevé d'Identité Bancaire"
+        iban:
+          title: "Numéro de compte bancaire International (IBAN)"
+          count_number: "N° compte :"
+          bic_code: "Code BIC :"
+        rib:
+          bank: "Banque :"
+          count_number: "N° compte :"
+          desk: "Guichet :"
+          key_number: "Clé :"
+          title: "Relevé d'Identité Bancaire"
     total:
       excl_vat: Total HT
       incl_vat: Total TTC

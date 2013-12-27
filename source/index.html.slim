@@ -78,27 +78,39 @@ html
           = '&nbsp;'
         div class="small-6 columns invoice-signature"
           p = t("document.acceptance_html")
+      - if data.document.payment.enable
+        div class="row"
+          div class="small-12 columns invoice-payment"
+            - if data.document.payment.types.include?('rib')
+              h3 class="invoice-payment--title" = t("document.payment.transfer.rib.title")
+              ul class="no-bullet"
+                li
+                  b =' t("document.payment.transfer.rib.bank")
+                  =' data.me.payment.transfer.rib.bank
+                li
+                  b =' t("document.payment.transfer.rib.desk")
+                  =' data.me.payment.transfer.rib.desk
+                  b =' t("document.payment.transfer.rib.count_number")
+                  =' data.me.payment.transfer.rib.count_number
+                  b =' t("document.payment.transfer.rib.key_number")
+                  =' data.me.payment.transfer.rib.key_number
+            - if data.document.payment.types.include?('iban')
+              h3 class="invoice-payment--title" = t("document.payment.transfer.iban.title")
+              ul class="no-bullet"
+                li
+                  b =' t("document.payment.transfer.iban.count_number")
+                  =' data.me.payment.transfer.iban.count_number
+                li
+                  b =' t("document.payment.transfer.iban.bic_code")
+                  =' data.me.payment.transfer.iban.bic_code
+            - if data.document.payment.types.include?('cheque')
+              h3 class="invoice-payment--title" = t("document.payment.cheque.title")
+              p
+                =' t("document.payment.cheque.payee")
+                b
+                  =' data.me.payment.cheque.payee
       div class="l-container--footer"
     footer class="l-footer"
-      div class="row"
-        div class="small-12 columns invoice-payment"
-          h3 class="invoice-payment--title" = t("document.payment.transfer.title")
-          ul class="no-bullet"
-            li
-              b =' t("document.payment.transfer.bank")
-              =' data.me.payment.transfer.bank
-            li
-              b =' t("document.payment.transfer.desk")
-              =' data.me.payment.transfer.desk
-              b =' t("document.payment.transfer.count_number")
-              =' data.me.payment.transfer.count_number
-              b =' t("document.payment.transfer.key_number")
-              =' data.me.payment.transfer.key_number
-          h3 class="invoice-payment--title" = t("document.payment.cheque.title")
-          p
-            =' t("document.payment.cheque.payee")
-            b
-              =' data.me.payment.cheque.payee
       div class="row"
         div class="small-12 columns invoice-credits"
           ul class="no-bullet"

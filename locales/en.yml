@@ -16,11 +16,16 @@ en:
         payee: "Set payee name to"
         title: Cheque
       transfer:
-        bank: "Bank:"
-        count_number: "Count no:"
-        desk: "Desk:"
-        key_number: "Key:"
-        title: "Transfer (RIB)"
+        iban:
+          title: "IBAN"
+          count_number: "Count no:"
+          bic_code: "BIC:"
+        rib:
+          bank: "Bank:"
+          count_number: "Count no:"
+          desk: "Desk:"
+          key_number: "Key:"
+          title: "Transfer (RIB)"
     total:
       excl_vat: Total excl VAT
       incl_vat: Total incl VAT

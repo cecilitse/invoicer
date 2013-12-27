@@ -8,10 +8,16 @@ payment:
   cheque:
     payee: Bob - The Great
   transfer:
-    bank: XXXXX / Bank title
-    count_number: "YYYYYYYYYYY"
-    desk: "ZZZZZ"
-    key_number: "KK"
+    rib:
+      bank: XXXXX / Bank title
+      count_number: "YYYYYYYYYYY"
+      desk: "ZZZZZ"
+      key_number: "KK"
+    iban:
+      bic_code: "XXXXXXXXXXX"
+      count_number: "YYYY YYYY YYYY YYYY YYYY YYYY YYY"
+    online:
+      url: http://www.example.org
 credits:
   - "<strong>Bob - The Great</strong>"
   - "Bob's address"

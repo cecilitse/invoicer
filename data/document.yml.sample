@@ -14,6 +14,12 @@ client:
   name: Tribe Leader
   postcode: XXXXX
   title: Hurd
+payment:
+  enable: true
+  types:
+    - iban
+    - cheque
+    - rib
 products:
   -
     description: We need more plants to feed the horde
