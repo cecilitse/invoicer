@@ -22,7 +22,7 @@ html
                 li = comment
           div class="small-4 columns text-right"
             img src="#{data.me.logo_url}" class="me-logo"
-        div class="row"
+        div class="row invoice--client-and-me"
           div class="small-6 columns"
             h2 = t("document.client")
             ul class="no-bullet"
@@ -44,23 +44,25 @@ html
           table class="invoice-details"
             thead
               tr
-                th class="invoice-details--title" = t("document.product.title")
-                th class="invoice-details--unit" = t("document.product.unit",   locale: data.document.base.locale)
-                th = t("document.product.price",          locale: data.document.base.locale)
-                th = t("document.product.quantity",       locale: data.document.base.locale)
-                th = t("document.product.vat",            locale: data.document.base.locale)
-                th = t("document.product.total_excl_vat")
+                th class="invoice-details--title"           = t("document.product.title")
+                th class="invoice-details--unit"            = t("document.product.unit")
+                th class="invoice-details--price"           = t("document.product.price")
+                th class="invoice-details--quantity"        = t("document.product.quantity")
+                th class="invoice-details--vat"             = t("document.product.vat")
+                th class="invoice-details--total-excl-vat"  = t("document.product.total_excl_vat")
             tbody
               - data.document.products.each do |product|
                 tr
                   td class="invoice-details--title"
                     strong = product.title
-                    p = product.description
                   td class="invoice-details--unit" = product.unit
                   td = product.price
                   td = product.quantity
                   td = product.vat_rate
                   td = product.total_excl_vat
+                tr
+                  td colspan="6" class="invoice-details--description"
+                    p = product.description
             tfoot
               tr class="invoice-details--subtotal"
                 td colspan="5" = t("document.total.excl_vat")

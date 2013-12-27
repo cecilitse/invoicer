@@ -21,9 +21,12 @@ html
 .small-4
   width: 33.3333%
 
+.invoice--client-and-me
+  margin-top: 15px
+  margin-bottom: 15px
+
 .invoice-comments
   margin: 10px 0 10px 0
-  margin-top: 10px
 
 .invoice-credits
   margin-top: 50px
@@ -32,7 +35,6 @@ html
     font-size: 0.8em
 
 .invoice-details
-  margin-top: 15px
   width: 100%
   th, td
     line-height: 1.125em
@@ -41,14 +43,18 @@ html
     vertical-align: top
   th
     text-transform: uppercase
+  .invoice-details--price,
+  .invoice-details--total-excl-vat
+    width: 62px
   .invoice-details--subtotal
     font-weight: normal
     text-transform: uppercase
+  .invoice-details--description,
+  .invoice-details--title
+    text-align: left
   .invoice-details--total
     font-weight: bold
     text-transform: uppercase
-  .invoice-details--title
-    text-align: left
   .invoice-details--unit
     text-align: center
 
