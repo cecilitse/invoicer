@@ -76,8 +76,9 @@ html
                 td colspan="5" = t("document.total.incl_vat")
                 td = data.document.total.incl_vat
       div class="row"
-        div class="small-6 columns"
-          = '&nbsp;'
+        div class="small-6 columns invoice-note"
+          p
+            = data.document.base.note || '&nbsp;'
         div class="small-6 columns invoice-signature"
           p = t("document.acceptance_html")
       - if data.document.payment.enable
