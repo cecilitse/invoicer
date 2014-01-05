@@ -10,7 +10,7 @@ class InvoicerCLI < Thor
   long_desc <<-LONGDESC
     Will generate an invoice PDF.
 
-    > $ ./invoicer.rb generate
+    > $ ./bin/invoicer generate
   LONGDESC
   def generate
     pdf_path = File.join(__dir__, '..', 'invoice.pdf')
