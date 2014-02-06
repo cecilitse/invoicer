@@ -4,11 +4,11 @@ require 'yaml'
 
 module Invoicer
   class Generator
-    attr_reader :pdf_path, :template_url
+    attr_reader :document, :pdf_directory
 
-    def initialize(pdf_path)
-      @template_url = build_template_url
-      @pdf_path     = pdf_path
+    def initialize(pdf_directory)
+      @document       = Invoicer::Document.new
+      @pdf_directory  = pdf_directory
     end
 
     def process
@@ -28,18 +28,16 @@ module Invoicer
         'utf8',
         '-m',
         'screen',
-        self.template_url,
-        self.pdf_path
+        self.document.template_url,
+        pdf_path
       ]
 
-      Shellwords.join(arguremnts)
+      return Shellwords.join(arguremnts)
     end
 
-    def build_template_url
-      document_path = File.join(__dir__, '..', '..', 'data', 'document.yml')
-      document      = YAML.load_file(document_path)
-
-      document['base']['template_url']
+    def pdf_path
+      filename = "#{self.document.invoice_reference}-#{self.document.client_title}.pdf"
+      return File.join(self.pdf_directory, filename)
     end
   end
 end
