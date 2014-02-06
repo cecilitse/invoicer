@@ -23,7 +23,8 @@ payment:
     - rib
 products:
   -
-    description: We need more plants to feed the horde
+    description_html: |
+      <p>We need more plants to feed the horde</p>
     title: Sow seeds
     unit: kg
     price: "10.24$"

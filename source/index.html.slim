@@ -62,7 +62,7 @@ html
                   td = product.total_excl_vat
                 tr
                   td colspan="6" class="invoice-details--description"
-                    p = product.description
+                    = product.description_html
             tfoot
               tr class="invoice-details--subtotal"
                 td colspan="5" = t("document.total.excl_vat")
