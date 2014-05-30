@@ -7,6 +7,13 @@ fr:
         <b>Signature et date</b>
         précédées de la mention « devis et conditions acceptés, bon pour
         accord »
+    invoice:
+      terms_of_payment_html: |
+        <ul>
+          <li>Aucun escompte accordé pour règlement anticipé.</li>
+          <li>Tout retard de paiement entraîne l'application d'une pénalité égale à 3 fois le taux d'intérêt légal.</li>
+          <li>Depuis le 1er janvier 2013 - indemnité forfaitaire pour frais de recouvrement fixée par décret à 40€ pour chaque facture payée en retard.</li>
+        </ul>
     product:
       price: Prix HT
       quantity: Qté

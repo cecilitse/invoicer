@@ -5,6 +5,13 @@ en:
     estimation:
       acceptance_html: |
         <b>Date and signature</b> preceded by « good for agreement »
+    invoice:
+      terms_of_payment_html: |
+        <ul>
+          <li>No discount given for invoice paid in advance.</li>
+          <li>Any delay in payment will result in the application of a penalty that equals to three times the legal interest rate.
+          Since January 1st 2013, the monetary damages for recovery costs is fixed by decree to 40€ for each bill paid late.</li>
+        </ul>
     product:
       price: Price excl VAT
       quantity: Qty

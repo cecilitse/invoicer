@@ -113,6 +113,10 @@ html
                 =' t("document.payment.cheque.payee")
                 b
                   =' data.me.payment.cheque.payee
+      - if data.document.base.type == 'invoice'
+        div class="row"
+          div class="small-12 columns invoice-payment--note"
+            p = t("document.invoice.terms_of_payment_html")
       div class="l-container--footer"
     footer class="l-footer"
       div class="row"
