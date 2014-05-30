@@ -8,7 +8,7 @@ base:
   note: 'global note'
   reference: No. 1337
   template_url: 'http://localhost:4567/index.html'
-  type: invoice
+  type: invoice # or estimation
 client:
   address: 42th Field
   city: Valley

@@ -1,9 +1,10 @@
 ---
 en:
   document:
-    acceptance_html: |
-      <b>Date and signature</b> preceded by « good for agreement »
     client: Client
+    estimation:
+      acceptance_html: |
+        <b>Date and signature</b> preceded by « good for agreement »
     product:
       price: Price excl VAT
       quantity: Qty

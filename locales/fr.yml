@@ -1,11 +1,12 @@
 ---
 fr:
   document:
-    acceptance_html: |
-      <b>Signature et date</b>
-      précédées de la mention « devis et conditions acceptés, bon pour
-      accord »
     client: Client
+    estimation:
+      acceptance_html: |
+        <b>Signature et date</b>
+        précédées de la mention « devis et conditions acceptés, bon pour
+        accord »
     product:
       price: Prix HT
       quantity: Qté
