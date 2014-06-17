@@ -8,32 +8,44 @@ Invoicer helps you generate invoice documents.
 
 Install WeasyPrint:
 
-    $ virtualenv .venv
-    $ source .env
-    $ pip install weasyprint
+```sh
+$ virtualenv .venv
+$ source .env
+$ pip install weasyprint
+```
 
 Install required gems:
 
-    $ bundler install
+```sh
+$ bundler install
+```
 
 Install default bower components:
 
-    $ bower install
+```sh
+$ bower install
+```
 
 Copy and edit sample configuration files:
 
-    $ cp data/document.yml.sample data/document.yml
-    $ cp data/me.yml.sample data/me.yml
+```sh
+$ cp data/document.yml.sample data/document.yml
+$ cp data/me.yml.sample data/me.yml
+```
 
 ### Usage
 
 Start the server:
 
-    $ middleman server
+```sh
+$ middleman server
+```
 
 Generate an invoice PDF:
 
-    $ bin/invoicer generate
+```sh
+$ bin/invoicer generate
+```
 
 ## Preview
 
@@ -69,17 +81,23 @@ See `data/document.yml.sample` to have an overview of all possible attributes.
 
 Create a new file in `data` folder, let's name it `terms.yml` and edit it:
 
-    ---
-    payment:
-      delay_in_days: '10'
+```yaml
+---
+payment:
+  delay_in_days: '10'
+```
 
 If you add in your view the following content:
 
-    span = data.terms.payment.delay_in_days
+```slim
+span = data.terms.payment.delay_in_days
+```
 
 Finally, the generated view will contain:
 
-    <span>10</span>
+```html
+<span>10</span>
+```
 
 ## View
 
@@ -91,13 +109,17 @@ You can directly edit and customize this file or create a custom template.
 
 Create a new file in `source` folder:
 
-    $ echo "Special invoice" > source/special.html
+```sh
+$ echo "Special invoice" > source/special.html
+```
 
 Then just edit `data/document.yml` file and point `template_url` to your freshly created template:
 
-    ---
-    base:
-      template_url: 'http://localhost:4567/special.html'
+```yaml
+---
+base:
+  template_url: 'http://localhost:4567/special.html'
+```
 
 Open a web browser and go to `http://localhost:4567/special.html`.
 
@@ -105,9 +127,11 @@ Open a web browser and go to `http://localhost:4567/special.html`.
 
 To localize your document, edit `data/document.yml` file and set `locale`:
 
-    ---
-    base:
-      locale: fr
+```yaml
+---
+base:
+  locale: 'fr'
+```
 
 Then `t` translation helper will automatically use the configured locale.
 
@@ -117,23 +141,29 @@ Locales are defined in `locales/` folder, one file per language.
 
 If you add in your view the following content:
 
-    p
-      = t('document.payment.online.title')
+```slim
+p
+  = t('document.payment.online.title')
+```
 
 Then, for English language, edit `locales/en.yml`:
 
-    ---
-    en:
-      document:
-        payment:
-          online:
-            title: 'Online payment'
+```yaml
+---
+en:
+  document:
+    payment:
+      online:
+        title: 'Online payment'
+```
 
 Finally, the generated view will contain:
 
-    <p>
-      Online payment
-    <p>
+```html
+<p>
+  Online payment
+<p>
+```
 
 ## Contributing
 
