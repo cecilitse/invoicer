@@ -47,6 +47,8 @@ Generate an invoice PDF:
 $ bin/invoicer generate
 ```
 
+This generates a PDF at the root directory of Invoicer.
+
 ## Preview
 
 Before generating an invoice PDF, you can have a preview of the document in a web browser.
@@ -70,16 +72,21 @@ See `data/me.yml.sample` to have an overview of all possible attributes.
 The `data/document.yml` file contains all the informations relative to a particular invoice such as: date, reference, client informations, available payment methods, products, total amount, global comments and note.
 Most of attributes are quite explicit.
 
-There are some special attributes:
-* **locale:** Used language (eg. en).
-* **template_url:** Used template url (eg. http://localhost:4567/).
-* **type:** 'invoice' or 'estimation'.
-
 See `data/document.yml.sample` to have an overview of all possible attributes.
+
+#### Mandatory reserved attributes
+
+Your `document.yml` must at least include the following attributes:
+
+* **base.locale:** Language (eg. 'en').
+* **base.reference:** Document reference (eg. 'No. 1337')
+* **base.template_url:** Middleman template url (eg. 'http://localhost:4567/special.html').
+* **base.type:** 'invoice' or 'estimation'.
+* **client.title** Company name, freelancer name, etc.
 
 ### Add a custom data file
 
-Create a new file in `data` folder, let's name it `terms.yml` and edit it:
+Create a new file in `data/` folder, let's name it `terms.yml` and edit it:
 
 ```yaml
 ---
@@ -93,7 +100,7 @@ If you add in your view the following content:
 span = data.terms.payment.delay_in_days
 ```
 
-Finally, the generated view will contain:
+Then, the generated view will contain:
 
 ```html
 <span>10</span>
@@ -107,7 +114,7 @@ You can directly edit and customize this file or create a custom template.
 
 ### Create a custom template
 
-Create a new file in `source` folder:
+Create a new file in `source/` folder:
 
 ```sh
 $ echo "Special invoice" > source/special.html
@@ -157,7 +164,7 @@ en:
         title: 'Online payment'
 ```
 
-Finally, the generated view will contain:
+Then, the generated view will contain:
 
 ```html
 <p>
