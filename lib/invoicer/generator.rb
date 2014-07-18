@@ -1,6 +1,5 @@
 require 'open3'
 require 'shellwords'
-require 'yaml'
 
 module Invoicer
   class Generator

@@ -1,3 +1,5 @@
+require 'yaml'
+
 module Invoicer
   class Document
     def initialize
