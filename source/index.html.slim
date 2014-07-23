@@ -67,11 +67,12 @@ html
               tr class="invoice-details--subtotal"
                 td colspan="5" = t("document.total.excl_vat")
                 td = data.document.total.excl_vat
-              tr class="invoice-details--subtotal"
-                td colspan="5"
-                  =' t("document.total.only_vat")
-                  =' data.document.total.vat_rate
-                td = data.document.total.only_vat
+              - if data.document.total.vat_rate != '0%'
+                tr class="invoice-details--subtotal"
+                  td colspan="5"
+                    =' t("document.total.only_vat")
+                    =' data.document.total.vat_rate
+                  td = data.document.total.only_vat
               tr class="invoice-details--total"
                 td colspan="5" = t("document.total.incl_vat")
                 td = data.document.total.incl_vat
