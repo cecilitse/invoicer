@@ -15,7 +15,7 @@ html
           div class="small-8 columns"
             h1 = t("document.type.#{data.document.base.type}")
             ul class="no-bullet"
-              li = data.document.base.date
+              li = DateTime.now.strftime('%d-%m-%Y')
               li = data.document.base.reference
             ul class="no-bullet invoice-comments"
               - data.document.base.comments.each do |comment|
