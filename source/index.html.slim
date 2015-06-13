@@ -31,8 +31,8 @@ html
               li = data.document.client.name
               li = data.document.client.address
               li
-                =' data.document.client.postcode
-                =' data.document.client.city
+                => data.document.client.postcode
+                => data.document.client.city
           div class="small-6 columns me-details"
             h2 = data.me.title
             ul class="no-bullet"
@@ -70,8 +70,8 @@ html
               - if data.document.total.vat_rate != '0%'
                 tr class="invoice-details--subtotal"
                   td colspan="5"
-                    =' t("document.total.only_vat")
-                    =' data.document.total.vat_rate
+                    => t("document.total.only_vat")
+                    => data.document.total.vat_rate
                   td = data.document.total.only_vat
               tr class="invoice-details--total"
                 td colspan="5" = t("document.total.incl_vat")
@@ -90,30 +90,30 @@ html
               h3 class="invoice-payment--title" = t("document.payment.transfer.rib.title")
               ul class="no-bullet"
                 li
-                  b =' t("document.payment.transfer.rib.bank")
-                  =' data.me.payment.transfer.rib.bank
+                  b => t("document.payment.transfer.rib.bank")
+                  => data.me.payment.transfer.rib.bank
                 li
-                  b =' t("document.payment.transfer.rib.desk")
-                  =' data.me.payment.transfer.rib.desk
-                  b =' t("document.payment.transfer.rib.count_number")
-                  =' data.me.payment.transfer.rib.count_number
-                  b =' t("document.payment.transfer.rib.key_number")
-                  =' data.me.payment.transfer.rib.key_number
+                  b => t("document.payment.transfer.rib.desk")
+                  => data.me.payment.transfer.rib.desk
+                  b => t("document.payment.transfer.rib.count_number")
+                  => data.me.payment.transfer.rib.count_number
+                  b => t("document.payment.transfer.rib.key_number")
+                  => data.me.payment.transfer.rib.key_number
             - if data.document.payment.types.include?('iban')
               h3 class="invoice-payment--title" = t("document.payment.transfer.iban.title")
               ul class="no-bullet"
                 li
-                  b =' t("document.payment.transfer.iban.count_number")
-                  =' data.me.payment.transfer.iban.count_number
+                  b => t("document.payment.transfer.iban.count_number")
+                  => data.me.payment.transfer.iban.count_number
                 li
-                  b =' t("document.payment.transfer.iban.bic_code")
-                  =' data.me.payment.transfer.iban.bic_code
+                  b => t("document.payment.transfer.iban.bic_code")
+                  => data.me.payment.transfer.iban.bic_code
             - if data.document.payment.types.include?('cheque')
               h3 class="invoice-payment--title" = t("document.payment.cheque.title")
               p
-                =' t("document.payment.cheque.payee")
+                => t("document.payment.cheque.payee")
                 b
-                  =' data.me.payment.cheque.payee
+                  => data.me.payment.cheque.payee
       - if data.document.base.type == 'invoice'
         div class="row"
           div class="small-12 columns invoice-payment--note"
