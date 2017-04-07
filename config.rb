@@ -1,3 +1,5 @@
+::Sass.load_paths << File.join(root, 'node_modules')
+
 activate :bower
 activate :i18n
 

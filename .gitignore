@@ -1,6 +1,7 @@
 /.bundle
 /.venv
 /bower_components
+/node_modules
 /build
 /data/document.yml
 /data/me.yml
