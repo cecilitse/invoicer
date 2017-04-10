@@ -5,5 +5,8 @@
   "main": "index.js",
   "repository": "git@github.com:cecilitse/invoicer.git",
   "author": "Cecile Veneziani <contact@cecilitse.org>",
-  "license": "GPL"
+  "license": "GPL",
+  "dependencies": {
+    "foundation-sites": "5.5.2"
+  }
 }
