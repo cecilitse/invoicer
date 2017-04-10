@@ -1,0 +1,12 @@
+{
+  "name": "invoicer",
+  "version": "0.1.0",
+  "description": "Yarn package for invoicer",
+  "main": "index.js",
+  "repository": "git@github.com:cecilitse/invoicer.git",
+  "author": "Cecile Veneziani <contact@cecilitse.org>",
+  "license": "GPL",
+  "dependencies": {
+    "foundation-sites": "5.5.2"
+  }
+}

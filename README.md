@@ -10,7 +10,7 @@ Install WeasyPrint:
 
 ```sh
 $ virtualenv .venv
-$ source .env
+$ source .py-env
 $ pip install weasyprint
 ```
 
@@ -20,10 +20,10 @@ Install required gems:
 $ bundler install
 ```
 
-Install default bower components:
+Install default yarn packages:
 
 ```sh
-$ bower install
+$ yarn install
 ```
 
 Copy and edit sample configuration files:
@@ -108,7 +108,7 @@ Then, the generated view will contain:
 
 ## View
 
-Invoicer is shipped with a default view template: `source/index.html.slim`. All its required asset components are defined in `bower.json` configuration file.
+Invoicer is shipped with a default view template: `source/index.html.slim`. All its required asset components are defined in `package.json` configuration file.
 
 You can directly edit and customize this file or create a custom template.
 
