@@ -10,7 +10,7 @@ Install WeasyPrint:
 
 ```sh
 $ virtualenv .venv
-$ source .env
+$ source .py-env
 $ pip install weasyprint
 ```
 
