@@ -4,14 +4,19 @@ Invoicer helps you generate invoice documents.
 
 ## Getting Started
 
+### Requirements
+
+- Python & [pipenv](https://github.com/kennethreitz/python-guide/blob/master/docs/dev/virtualenvs.rst)
+- NodeJS & Yarn
+- Ruby & Bundler
+
 ### Installation
 
-Install WeasyPrint:
+Install WeasyPrint via pipenv:
 
 ```sh
-$ virtualenv .venv
-$ source .py-env
-$ pip install weasyprint
+$ pipenv install
+$ pipenv shell
 ```
 
 Install required gems:
