@@ -16,7 +16,6 @@ Install WeasyPrint via pipenv:
 
 ```sh
 $ pipenv install
-$ pipenv shell
 ```
 
 Install required gems:
@@ -39,6 +38,12 @@ $ cp data/me.yml.sample data/me.yml
 ```
 
 ### Usage
+
+Activate Python virtualenv:
+
+```sh
+$ pipenv shell
+```
 
 Start the server:
 
