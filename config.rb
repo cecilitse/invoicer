@@ -1,4 +1,4 @@
-::Sass.load_paths << File.join(root, 'node_modules')
+::SassC.load_paths << File.join(root, 'node_modules')
 
 activate :i18n
 
